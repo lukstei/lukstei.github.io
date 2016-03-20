@@ -1252,6 +1252,7 @@ input.button
 {
 	#media-control
 	{
+		display: none;
 		left:10%;
 		right:0%;
 		bottom:0%;
@@ -1266,6 +1267,6 @@ input.button
 	#nostalgia-navigation
 	{
 		left:50% !important;
-		margin-left:-150px;
+		margin-left:-170px;
 	}
 }
