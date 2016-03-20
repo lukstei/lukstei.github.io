@@ -87,7 +87,6 @@
 						$this.startPreloader.animate({width:0},1000,'easeOutQuint',function() 
 						{
 							$this.backgroundOverlay.css('display','block');
-							$this.showNavigationMenu(true,{complete:function() {}});
 						});
 					});
 				}});
