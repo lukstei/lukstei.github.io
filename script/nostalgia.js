@@ -72,31 +72,13 @@
 			
 			$this.breakpoint=[1100,960,690];
 			
-			$this.nostalgiaNavigationMenuHeight=300;
+			$this.nostalgiaNavigationMenuHeight=350;
 
 			/******************************************************************/
 			
 			this.load=function()
 			{		
-				//$this.requestCurrent=$('#nostalgiaRequest').val();
-				
-				/*$(window).resize(function() 
-				{
-					$this.setPosition();
-				});*/
-				
-				/*
-				$('#nostalgia-tab-content-scroll').scroll(function() 
-				{
-					$(':input,a').qtip('destroy');
-				});
-				
-				$this.setPosition();*/
-				
-				//$this.createMenuSlider();
 				$this.createSupersizedSlider();
-				
-				//$this.createNostalgiaTabContentMenu();
 
 				$this.createStartPrealoder({complete:function()
 				{
@@ -104,39 +86,89 @@
 					{
 						$this.startPreloader.animate({width:0},1000,'easeOutQuint',function() 
 						{
-							//$this.createAudioPlayer();
-							
-							//$this.blink($this.nostalgiaNavigationClickHereBox);	
-							//$this.showMediaControl(true);
-
-							/*$this.nostalgiaNavigationNameBox.bind('click',function() 
-							{
-								if(parseInt($this.nostalgiaNavigationMenu.height())==0) 
-								{
-									$this.redirect('menu');
-									$this.showNavigationMenu(true,{complete:function() 
-									{
-										$this.showNavigationClickHereBox(false);
-									}});
-								}
-								else $this.redirect('main');
-							});*/
-							
 							$this.backgroundOverlay.css('display','block');
-
-//							$this.showNavigationClickHereBox(false);
-
-							$this.showNavigationMenu(true,{complete:function() 
-							{
-								$this.enable=true;
-							}});
-
-							//$this.enable=true;
-							//$this.handleRequest();
+							$this.showNavigationMenu(true,{complete:function() {}});
 						});
 					});
 				}});
 			};
+
+
+			this.createStartPrealoder=function(data)
+			{
+				var slides = [$this.slide[0]]; // only preload first
+
+				var i=0;
+				var count=slides.length;
+
+				var list=$(document.createElement('ul')).attr('class','no-list box-center')
+		
+				$this.startPreloader.find('div:first').prepend(list);
+				$this.blink($this.startPreloader.find('p'));
+							
+				$(slides).each(function(index) 
+				{			
+					var image=$(document.createElement('img'));	
+					var element=$(document.createElement('li'));
+					
+					list.append(element);
+
+					image.attr('src',$this.slide[index].image + ($.browser.msie ? '?i='+getRandom(1,10000) : ''));
+
+					$(image).bind('load',function() 
+					{
+						element.animate({opacity:1},100,function() 
+						{
+							if((++i)==count) data.complete.apply();
+						});
+					});
+				});
+			};
+
+			this.showNavigationMenu=function(show,event)
+			{
+				if(show)
+				{
+					$this.nostalgiaNavigationMenu.animate({height:$this.nostalgiaNavigationMenuHeight},{duration:500,complete:function() 
+					{
+						$this.nostalgiaNavigationMenuList.trigger('updateSizes');
+						$this.doEvent(event);					
+					}});
+				}			
+				else
+				{
+					if(parseInt($this.nostalgiaNavigationMenu.css('height'))==0)
+					{
+						$this.doEvent(event);
+						$this.nostalgiaNavigationMenuList.trigger('updateSizes');
+						return;
+					}
+					$this.nostalgiaNavigationMenu.animate({height:'0px'},{duration:500,complete:function()  
+					{
+						$this.nostalgiaNavigationMenuList.trigger('updateSizes');
+						$this.doEvent(event);
+					}});				
+				}
+			};
+
+			this.createSupersizedSlider=function()
+			{
+				$.supersized(
+				{
+					slides					: $this.slide,
+					autoplay				: false,
+					thumb_links				: false,
+					start_slide				: ($this.options.slideImageIndexPageHome==-1 ? 1 : $this.options.slideImageIndexPageHome),
+					thumbnail_navigation	: false
+				});
+				
+				$('#nextslide,#prevslide').bind('click',function(e)
+				{
+					e.preventDefault();
+				});
+			};
+
+			//***** dump
 			
 			/******************************************************************/
 			
@@ -525,33 +557,6 @@
 				$this.nostalgiaNavigation.css('display','block');
 			};
 			
-			/******************************************************************/
-			
-			this.showNavigationMenu=function(show,event)
-			{
-				if(show)
-				{
-					$this.nostalgiaNavigationMenu.animate({height:$this.nostalgiaNavigationMenuHeight},{duration:500,complete:function() 
-					{
-						$this.nostalgiaNavigationMenuList.trigger('updateSizes');
-						$this.doEvent(event);					
-					}});
-				}			
-				else
-				{
-					if(parseInt($this.nostalgiaNavigationMenu.css('height'))==0)
-					{
-						$this.doEvent(event);
-						$this.nostalgiaNavigationMenuList.trigger('updateSizes');
-						return;
-					}
-					$this.nostalgiaNavigationMenu.animate({height:'0px'},{duration:500,complete:function()  
-					{
-						$this.nostalgiaNavigationMenuList.trigger('updateSizes');
-						$this.doEvent(event);
-					}});				
-				}
-			};
 			
 			/******************************************************************/
 			
@@ -632,22 +637,7 @@
 			
 			/******************************************************************/
 			
-			this.createSupersizedSlider=function()
-			{
-				$.supersized(
-				{
-					slides					: $this.slide,
-					autoplay				: false,
-					thumb_links				: false,
-					start_slide				: ($this.options.slideImageIndexPageHome==-1 ? 1 : $this.options.slideImageIndexPageHome),
-					thumbnail_navigation	: false
-				});
-				
-				$('#nextslide,#prevslide').bind('click',function(e)
-				{
-					e.preventDefault();
-				});
-			};
+			
 			
 			/******************************************************************/
 			
@@ -678,34 +668,6 @@
 			
 			/******************************************************************/
 			
-			this.createStartPrealoder=function(data)
-			{
-				var i=0;
-				var count=$this.slide.length;
-
-				var list=$(document.createElement('ul')).attr('class','no-list box-center')
-		
-				$this.startPreloader.find('div:first').prepend(list);
-				$this.blink($this.startPreloader.find('p'));
-							
-				$($this.slide).each(function(index) 
-				{			
-					var image=$(document.createElement('img'));	
-					var element=$(document.createElement('li'));
-					
-					list.append(element);
-
-					image.attr('src',$this.slide[index].image + ($.browser.msie ? '?i='+getRandom(1,10000) : ''));
-
-					$(image).bind('load',function() 
-					{
-						element.animate({opacity:1},100,function() 
-						{
-							if((++i)==count) data.complete.apply();
-						});
-					});
-				});
-			};
 						
 			/******************************************************************/
 			

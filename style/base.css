@@ -1002,7 +1002,6 @@ input.button
 		{
 			clear:both;
 			display:block;
-			cursor:pointer;
 			overflow:hidden;
 			padding:40px 20px 40px 20px;
 		}
