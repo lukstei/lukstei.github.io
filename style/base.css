@@ -6,7 +6,6 @@
 *
 {
 	outline:none;
-	line-height:150%;
 }
 
 body
@@ -844,7 +843,7 @@ input.button
 		color:#AAAAAA;
 		font-size:12px;
 		margin-top:10px;
-		font-family:'Aldrich';
+		font-family:'Sans';
 	}
 
 /******************************************************************************/
@@ -904,7 +903,7 @@ input.button
 		left:10%;
 		bottom:10%;
 		right:auto;
-		width:300px;
+		width:340px;
 		position:absolute;
 	}
 
