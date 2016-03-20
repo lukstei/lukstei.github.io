@@ -72,7 +72,7 @@
 			
 			$this.breakpoint=[1100,960,690];
 			
-			$this.nostalgiaNavigationMenuHeight=350;
+			$this.nostalgiaNavigationMenuHeight=305;
 
 			/******************************************************************/
 			

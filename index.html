@@ -13,6 +13,7 @@
 	<link rel="stylesheet" type="text/css" href="style/supersized/supersized.css"/>
 	<link rel="stylesheet" type="text/css" href="style/base.css"/> 
 	<link rel="stylesheet" type="text/css" href="style/page.css"/> 
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
 
 	<link rel="stylesheet" type="text/css" media="screen and (max-width:550px)" href="style/responsive-0-550.css"/> 
 	<link rel="stylesheet" type="text/css" media="screen and (min-width:480px) and (max-width:550px)" href="style/responsive-480-550.css"/> 
@@ -40,6 +41,39 @@
 		#nostalgia-navigation-name-box a,#nostalgia-navigation-name-box a:visited, #nostalgia-navigation-name-box a:hover  {
 			color: white;
 			text-decoration: none;
+		}
+
+		.socialbtns, .socialbtns ul, .socialbtns li {
+		    margin: 0;
+		    padding: 5px;
+		}
+
+		.socialbtns, .socialbtns ul, .socialbtns li {
+		    margin: 0;
+		    padding: 5px;
+		}
+
+		.socialbtns li {
+		    list-style: none outside none;
+		    display: inline-block;
+		}
+
+		.socialbtns .fa {
+		    width: 28px;
+		    height: 28px;
+		    color: #FFF;
+		    background-color: #000;
+		    padding-left: 12px;
+		    padding-top: 12px;
+		    transition: all ease 0.2s;
+		    -moz-transition: all ease 0.2s;
+		    -webkit-transition: all ease 0.2s;
+		    -o-transition: all ease 0.2s;
+		}
+
+		.socialbtns .fa:hover {
+		    color: #FFC000;
+		    text-decoration: none;
 		}
 
 	</style>
@@ -70,9 +104,17 @@
 			</div>
 			
 
+			<div class="socialbtns">
+    <ul>
+        <li><a href="#" class="fa fa-lg fa-envelope mail-link"></a></li>
+        <li><a href="https://github.com/lukstei" target="_blank" class="fa fa-lg fa-github"></a></li>
+        <li><a href="https://at.linkedin.com/in/lukas-steinbrecher-951953b6" target="_blank" class="fa fa-lg fa-linkedin"></a></li>
+    </ul>
+</div>
+
 			<!-- Name box -->
 			<div id="nostalgia-navigation-name-box">
-				<a href='#' id='mail-link'>
+				<a href='#' class='mail-link'>
 					<span>Lukas</span>
 					<span>Steinbrecher</span>
 				</a>

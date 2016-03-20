@@ -1,7 +1,7 @@
 
 $(document).ready(function() 
 {
-	$('#mail-link').click(function(e) {
+	$('.mail-link').click(function(e) {
 		var mail = "lukas";
 		window.location.href = "mailto:" + mail + "@lukstei.com";
 	});
