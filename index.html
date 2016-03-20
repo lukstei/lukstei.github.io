@@ -1,1 +1,129 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Your page title here :)</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/skeleton.css">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <style>
+    body {
+      background: url(images/bg.jpg) #171a1d center bottom;
+      background-size: cover;
+      background-attachment: fixed;
+
+      color: #ffffff;
+    }
+
+    .name {
+
+      font-size: 1.9em;
+    }
+
+
+    #app {
+      text-shadow: 1px 1px #000000;
+      font-family: 'Roboto', Helvetica, sans-serif;
+      font-size: 1em;
+      line-height: 1.8em;
+      color: #ffffff;
+      font-weight: 100;
+
+/*-webkit-filter: blur(4px);
+          filter: blur(4px);
+  */
+  -webkit-animation-name: blurin;
+  
+          animation-name: blurin;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+-webkit-animation-timing-function: cubic-bezier(0.600, 0.040, 0.980, 0.335);
+        animation-timing-function: cubic-bezier(0.600, 0.040, 0.980, 0.335); 
+  -webkit-animation-duration: 2s; 
+          animation-duration: 2s;
+}
+
+@-webkit-keyframes blurin {
+  from { -webkit-filter: blur(4px); filter: blur(4px); }
+  to   { -webkit-filter: blur(0px); filter: blur(0px); }
+}
+
+@keyframes blurin {
+  from { -webkit-filter: blur(4px); filter: blur(4px); }
+  to   { -webkit-filter: blur(0px); filter: blur(0px); }
+}
+
+    .sub {
+      letter-spacing: 0.3em;
+      text-align: left;
+      width: 65%;
+      margin: 0 auto;
+    }
+
+    .container {
+      max-width: 800px; }
+      .header {
+        margin-top: 6rem;
+      }
+
+      @media (min-width: 550px) {
+        .header {
+          margin-top: 18rem;
+        }
+      }
+
+    </style>
+
+  </head>
+  <body>
+
+    <div class="container" id="app">
+      <section class="header">
+        <div class="sub name">LUKAS<br/>STEINBRECHER</div>
+        <br/>
+        <p>
+          I'm an Austria based student, currently in the last year of the business informatics master at Vienna UT,
+          <br>I'm interested in financial markets, (quantitative) trading, computer science and bayesian statistics and <br/>I'm currently a CFA Level 1 candidate.
+        </p>
+        <br/>
+        <div class="value-props row">
+          <div class="four columns value-prop">
+
+          </div>
+          <div class="four columns value-prop">
+
+          </div>
+          <div class="four columns value-prop">
+            GH | IN
+          </div>
+        </div>
+      </section>
+    </nav>
+  </div>
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>
