@@ -1,0 +1,175 @@
+
+	/**************************************************************************/
+	/*	Base                                                                  */
+	/**************************************************************************/
+	
+	/**************************************************************************/
+	/*  Form                                                                  */
+	/**************************************************************************/
+	
+	textarea,
+	input[type="text"]
+	{
+		width:272px;
+	}
+
+	/**************************************************************************/
+	/*  Nostalgia								                              */
+	/**************************************************************************/
+
+	body,
+	#nostalgia
+	{
+		min-width:100%;
+	}
+	
+		/**********************************************************************/
+		/*  Nostalgia / Tab													  */
+		/**********************************************************************/
+	
+			/******************************************************************/
+			/*  Nostalgia / Tab / Content									  */
+			/******************************************************************/
+			
+			#nostalgia-tab-footer,
+			#nostalgia-tab-content,
+			.nostalgia-tab-right #nostalgia-tab-footer
+			{
+				width:320px;
+				min-width:320px;
+			}
+			
+				/**************************************************************/
+				/*  Nostalgia / Tab / Content / Scroll						  */
+				/**************************************************************/			
+
+					/**********************************************************/
+					/*  Nostalgia / Tab / Content / Scroll / Page			  */
+					/**********************************************************/				
+				
+					#nostalgia-tab-content-page
+					{
+						width:290px;
+					}
+		
+			/******************************************************************/
+			/*  Nostalgia / Tab / Footer									  */
+			/******************************************************************/
+
+				/**************************************************************/
+				/*  Nostalgia / Tab / Footer / Caption						  */
+				/**************************************************************/
+
+				#nostalgia-tab-footer span.float-left,
+				#nostalgia-tab-footer span.float-right
+				{
+					float:right;
+				}
+				
+				#nostalgia-tab-footer span.float-left
+				{
+					display:none;
+				}
+				
+	/**************************************************************************/
+	/*  Page		                                                          */
+	/**************************************************************************/
+
+	/**************************************************************************/
+	/*  Blog		                                                          */
+	/*	Post																  */
+	/**************************************************************************/
+	
+		/**********************************************************************/
+		/*  Blog / Post	list		                                          */
+		/**********************************************************************/	
+		
+			/******************************************************************/
+			/*  Blog / Post			                                          */
+			/*  Post													      */
+			/******************************************************************/	
+	
+				/**************************************************************/
+				/*  Blog / Post / Header								      */
+				/*	Post / Header											  */
+				/**************************************************************/	
+
+					div.post div.post-header h3,
+					ul.blog-list li.blog-list-post div.blog-list-post-header h3
+					{
+						float:left;
+						width:200px;
+					}
+					
+					div.post div.post-header h3,
+					ul.blog-list li.blog-list-post div.blog-list-post-header h3,
+					div.post div.post-header h3 a,
+					ul.blog-list li.blog-list-post div.blog-list-post-header h3 a
+					{
+						line-height:130%;
+					}
+
+					div.post div.post-header span,
+					ul.blog-list li.blog-list-post div.blog-list-post-header span
+					{
+						float:right;
+						font-size:24px;
+					}
+			
+				/**************************************************************/
+				/*  Blog / Post / Image									      */
+				/**************************************************************/	
+				
+					div.post div.post-image a.fancybox-image,
+					div.post div.post-image a.fancybox-video,
+					ul.blog-list li.blog-list-post div.blog-list-post-image a.fancybox-image,
+					ul.blog-list li.blog-list-post div.blog-list-post-image a.fancybox-video,
+					div.post div.post-image a.fancybox-image img,
+					div.post div.post-image a.fancybox-video img,
+					ul.blog-list li.blog-list-post div.blog-list-post-image a.fancybox-image img,
+					ul.blog-list li.blog-list-post div.blog-list-post-image a.fancybox-video img
+					{
+						width:290px;
+						height:118px;
+					}
+					
+					/**********************************************************/
+					/*  Blog / Post / Image / Caption						  */
+					/*  Post / Image / Caption								  */
+					/**********************************************************/	
+					
+						div.post div.post-image div.caption span.comment,
+						ul.blog-list li.blog-list-post div.blog-list-post-image div.caption span.comment
+						{
+							float:left;
+							clear:both;
+							margin-top:5px;
+						}
+						
+		/**********************************************************************/
+		/*  Post / Comment list		                                          */
+		/**********************************************************************/	
+
+		ul.comment-list li ul
+		{
+			margin-left:60px;
+		}
+				ul.comment-list li div>img
+				{
+					width:60px;
+				}
+				
+					ul.comment-list li div>p,
+					ul.comment-list li div>span
+					{
+						padding-left:80px;
+					}
+	
+	/**************************************************************************/
+	/*  Contact		                                                          */
+	/**************************************************************************/
+
+			div.page-contact div.contact-details-about
+			{
+				width:250px;
+			}			
