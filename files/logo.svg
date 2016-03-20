@@ -15,7 +15,10 @@
    id="svg3336"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="logo.svg">
+   sodipodi:docname="logo.svg"
+   inkscape:export-filename="/Users/lukas/Dev/lukstei.github.io/files/logo.png"
+   inkscape:export-xdpi="2.03"
+   inkscape:export-ydpi="2.03">
   <defs
      id="defs3338" />
   <sodipodi:namedview
@@ -26,8 +29,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.35"
-     inkscape:cx="-39.285714"
-     inkscape:cy="520"
+     inkscape:cx="-89.285714"
+     inkscape:cy="291.42857"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -61,13 +64,13 @@
        x="14.285714"
        y="358.07651" />
     <path
-       style="fill:none;fill-rule:evenodd;stroke:#ffffff;stroke-width:100;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 120.35965,421.23731 9.5157,493.2742 513.8478,-179.61615"
+       style="fill:none;fill-rule:evenodd;stroke:#ffffff;stroke-width:144.49975586;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 161.49857,420.43053 9.58482,454.46145 517.58003,-165.48324"
        id="path3344"
        inkscape:connector-curvature="0" />
     <path
-       style="fill:none;fill-rule:evenodd;stroke:#ffffff;stroke-width:40;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="M 335.16963,620.9203 C 599.31326,983.80749 599.31326,986.66489 599.31326,986.66489"
+       style="fill:none;fill-rule:evenodd;stroke:#ffffff;stroke-width:81.64803314;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 358.75597,601.48254 C 632.58879,966.10025 632.58879,968.97128 632.58879,968.97128"
        id="path4146"
        inkscape:connector-curvature="0" />
   </g>
