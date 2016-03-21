@@ -23,11 +23,44 @@
 	<link rel="stylesheet" type="text/css" media="screen and (max-height:510px)" href="style/responsive-height-0-510.css"/> 
 
 	<link href='https://fonts.googleapis.com/css?family=Lato:400,300,100' rel='stylesheet' type='text/css'>
-
+	<link href='https://fonts.googleapis.com/css?family=Sail' rel='stylesheet' type='text/css'>
 	<script type="text/javascript" src="script/jquery.min.js"></script>
 	<script type="text/javascript" src="script/jquery-migrate.min.js"></script>
 
 	<style type="text/css">
+		#quote {
+			height: 40px;
+			right: 10%;
+			z-index: -100;
+			bottom: 10%;
+			width: 450px;
+			display: block;
+			position: absolute;
+			text-align: right;
+
+			font-family: 'Lato', sans-serif;
+			font-weight: 100;
+			color: white;
+			font-size: 16pt;
+			padding: 5px;
+			text-shadow: 1px 2px #000000;
+		}
+
+		#quote p {
+			letter-spacing: 1px;
+			margin: 0;
+			padding: 0;
+			display: inline;	
+		}
+
+		#quote .source {
+			display: inline;
+			vertical-align: text-top;
+
+			/*float: right;*/
+			font-family: 'Sail', cursive;
+		}
+
 		* {
 			-webkit-font-smoothing: subpixel-antialiased;
 			-webkit-text-stroke:1px transparent;
@@ -77,7 +110,7 @@
 		#nostalgia-navigation-menu ul li a, #nostalgia-navigation-name-box span	 {
 			font-family: 'Lato', sans-serif;
 			font-weight: 100;
-			
+
 		}
 
 		.socialbtns ul, .socialbtns li {
@@ -165,8 +198,13 @@
 			</div>
 			<!-- /Navigation -->
 
+			<div id="quote">
+				<p>To the mind that is still, the whole universe surrenders - </p><div class="source">Lao Tzu</div>
+			</div>
+
 			<!-- Media control -->
 			<div id="media-control">
+				
 				<a href="#" id="nextslide"></a>
 				<a href="#" id="prevslide"></a>
 			</div>
