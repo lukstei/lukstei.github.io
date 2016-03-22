@@ -1242,7 +1242,7 @@ input.button:hover
 
 @media only screen and (max-width:959px) 
 {
-		#quote {
+	#quote {
 		display: none !important;
 	}
 
