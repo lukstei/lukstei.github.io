@@ -1,7 +1,21 @@
 
 $(document).ready(function() 
 {
-	$('.tooltip').tooltipster({interactive: false, theme: 'tooltipster-borderless', maxWidth: 500});
+	var eventSent = false;
+
+	$('.tooltip').tooltipster({
+		interactive: false, 
+		theme: 'tooltipster-borderless', 
+		maxWidth: 500,
+		functionBefore: function() {
+			if(!eventSent) {
+				ga('send', 'event', 'tooltip', 'view');
+				eventSent = true;
+			}
+			
+			return true;
+		}
+	});
 
 	$('.mail-link').click(function(e) {
 		var mail = "lukas";
@@ -19,14 +33,14 @@ $(document).ready(function()
 		startPage				: 'menu'
 	};
 	
-    var slide=
+	var slide=
 	[
-		{image:'media/image/background/02.jpg',title:''},
-		{image:'media/image/background/01.jpg',title:''},
-		{image:'media/image/background/03.jpg',title:''},
-		{image:'media/image/background/04.jpg',title:''}
+	{image:'media/image/background/02.jpg',title:''},
+	{image:'media/image/background/01.jpg',title:''},
+	{image:'media/image/background/03.jpg',title:''},
+	{image:'media/image/background/04.jpg',title:''}
 	];
 	
 	
-    $('#nostalgia').nostalgia(options,{},slide,[],{},{});
+	$('#nostalgia').nostalgia(options,{},slide,[],{},{});
 });
