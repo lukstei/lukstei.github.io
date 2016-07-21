@@ -1,6 +1,8 @@
 
 $(document).ready(function() 
 {
+	$('.tooltip').tooltipster({interactive: false, theme: 'tooltipster-borderless', maxWidth: 500});
+
 	$('.mail-link').click(function(e) {
 		var mail = "lukas";
 		window.location.href = "mailto:" + mail + "@lukstei.com";

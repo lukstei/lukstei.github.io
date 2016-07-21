@@ -16,6 +16,8 @@
 	<link rel="stylesheet" type="text/css" href="style/base.css"/> 
 	<link rel="stylesheet" type="text/css" href="style/page.css"/> 
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="style/tooltipster.bundle.min.css">
+	
 
 	<link rel="stylesheet" type="text/css" media="screen and (max-width:550px)" href="style/responsive-0-550.css"/> 
 	<link rel="stylesheet" type="text/css" media="screen and (min-width:480px) and (max-width:550px)" href="style/responsive-480-550.css"/> 
@@ -144,6 +146,20 @@
 			background: #000000;
 		}
 
+		.tooltip {
+			text-decoration: none;
+			border-bottom: 1px dotted #66FFFF;
+			color: #fff;
+			outline: none;
+		}
+
+		#bayesian_formula_img {
+			margin: 10px auto 15px auto;
+			display: block;
+		}
+
+		.tooltip_templates { display: none; }
+
 	</style>
 
 </head>
@@ -161,81 +177,107 @@
 					<li><a>Finance</a></li>
 					<li class="dl-text">
 						<p>Hi, my name is <strong>Lukas Steinbrecher</strong>, I'm currently pursuing my master's degree in Business Informatics at <strong>Vienna University of Technology</strong>.</p>
+						
+						<p> 
+						<strong><span class="tooltip" data-tooltip-content="#thesis">My thesis</span></strong> topic is <strong>
+							<span class="tooltip" data-tooltip-content="#bayesian">Bayesian</span> 
+							<span class="tooltip" data-tooltip-content="#portfolio">Portfolio Selection</span> using 
+							<span class="tooltip" data-tooltip-content="#mcmc">Markov chain Monte Carlo Methods</span></strong>.
+						</p>
+
 						<p>Coming from a <strong>Computer Science</strong> background, I now want to specialize in the field of <strong>Finance</strong>. I'm also a 2016 Level I candidate in the <strong>CFA Program</strong>.</p>
+						
 						<p>If you just want to say hello or ask a question, please send me a short <strong>message</strong>. I am always eager to make new connections.</p>
-						</li>
-					</ul>
-
-				</div>
-
-
-
-				<div class="socialbtns">
-					<ul>
-						<li><a href="#" class="fa fa-lg fa-envelope mail-link"></a></li>
-						<li><a href="https://github.com/lukstei" target="_blank" class="fa fa-lg fa-github"></a></li>
-						<li><a href="http://at.linkedin.com/in/lukstei" target="_blank" class="fa fa-lg fa-linkedin"></a></li>
-					</ul>
-				</div>
-
-				<!-- Name box -->
-				<div id="nostalgia-navigation-name-box">
-					<a href='#' class='mail-link'>
-						<span>Lukas</span>
-						<span>Steinbrecher</span>
-					</a>
-				</div>
-				<!-- /Name box -->
-
-			</div>
-			<!-- /Navigation -->
-
-			<div id="quote">
-				<p>To the mind that is still, the whole universe surrenders - </p><div class="source">Lao Tzu</div>
+					</li>
+				</ul>
 			</div>
 
-			<!-- Media control -->
-			<div id="media-control">
-				
-				<a href="#" id="nextslide"></a>
-				<a href="#" id="prevslide"></a>
+			<div class="socialbtns">
+				<ul>
+					<li><a href="#" class="fa fa-lg fa-envelope mail-link"></a></li>
+					<li><a href="https://github.com/lukstei" target="_blank" class="fa fa-lg fa-github"></a></li>
+					<li><a href="http://at.linkedin.com/in/lukstei" target="_blank" class="fa fa-lg fa-linkedin"></a></li>
+				</ul>
 			</div>
-			<!-- /Media control -->
+
+			<!-- Name box -->
+			<div id="nostalgia-navigation-name-box">
+				<a href='#' class='mail-link'>
+					<span>Lukas</span>
+					<span>Steinbrecher</span>
+				</a>
+			</div>
+			<!-- /Name box -->
+
+		</div>
+		<!-- /Navigation -->
+
+		<div id="quote">
+			<p>To the mind that is still, the whole universe surrenders - </p><div class="source">Lao Tzu</div>
 		</div>
 
-		<!-- Preloader -->
-		<div id="start-preloader">
-			<div>
-				<p>Loading...</p>
-			</div>
+		<!-- Media control -->
+		<div id="media-control">
+
+			<a href="#" id="nextslide"></a>
+			<a href="#" id="prevslide"></a>
 		</div>
-		<!-- /Preloader -->
+		<!-- /Media control -->
+	</div>
 
-		<!-- Background overlay -->
-		<div id="background-overlay">
-			<div class="background-overlay-1"></div>
+	<!-- Preloader -->
+	<div id="start-preloader">
+		<div>
+			<p>Loading...</p>
 		</div>
-		<!-- /Background overlay -->
+	</div>
+	<!-- /Preloader -->
 
-		<script type="text/javascript" src="script/jquery-ui.min.js"></script>
-		<script type="text/javascript" src="script/jquery.easing.js"></script>
-		<script type="text/javascript" src="script/jquery.supersized.min.js"></script>
-		<script type="text/javascript" src="script/jquery.supersized.shutter.min.js"></script>
+	<!-- Background overlay -->
+	<div id="background-overlay">
+		<div class="background-overlay-1"></div>
+	</div>
+	<!-- /Background overlay -->
 
-		<script type="text/javascript" src="script/script.js"></script>
-		<script type="text/javascript" src="script/nostalgia.js"></script>
-		<script type="text/javascript" src="script/main.js"></script>
+	<div class="tooltip_templates">
+		<span id="thesis">
+			The goal of my thesis is conduct a statistically relevant comparison of advanced <strong>Bayesian models</strong> and the <strong>classical Markowitz optimization</strong> approach. I will implement the models in a <strong>Probabilistic Programming Language</strong> called <strong>Stan</strong>, which uses <strong>Markov chain Monte Carlo</strong> algorithms to perform inference on those models. I will investigate whether these models perform better and the usage of these advanced techniques is justified in practice.
+		</span>
+		<span id="bayesian">
+			The <strong>Bayesian</strong> approach of portfolio selection tries to deal with the problems of the classical framework by using advanced models, and gives a more generalized way to approach to the portfolio selection problem.
+		</span>
+		<span id="portfolio">
+			<strong>Portfolio selection</strong> deals with the problem of selecting the optimal weights for a portfolio of risky financial assets based on investor preferences and constraints. <br/> Harry Markowitz introduced the classical Mean-Variance framework of portfolio selection in 1952, for which he received the Nobel Prize in Economics. Although the theoretical implications are extremely important, several issues when using it in practice have been identified. Parameter uncertainty isn't taken into account, which lead to suboptimal and volatile weight choices, as well as the distribution of returns is assumed to be normal, which is well known to be not the case, especially for short term time horizons.
+		</span>
+		<span id="mcmc">
+			<img src="image/bayesian_formula.png" alt="Bayesian formula" id="bayesian_formula_img"/>
 
-		<script>
-			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+			In the general case it is very hard, or even impossible to calculate the posterior using the Bayesian formula because it involves solving the integral of the evidence in the denominator.<br/>
 
-			ga('create', 'UA-75337739-1', 'auto');
-			ga('send', 'pageview');
-		</script>
+			<strong>Markov chain Monte Carlo (MCMC)</strong> methods are a set of algorithms which allow to do inference on Bayesian models without solving these models analytically. In recent times not only advanced MCMC algorithms, which allow the usage of highly complex models with a high number of parameters, have been discovered, but also the increasing power of computers allows the practical use of MCMC methods, which are computationally intensive.
+		</span>
+	</div>
 
-	</body>
+	<script type="text/javascript" src="script/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="script/jquery.easing.js"></script>
+	<script type="text/javascript" src="script/jquery.supersized.min.js"></script>
+	<script type="text/javascript" src="script/jquery.supersized.shutter.min.js"></script>
+	<script type="text/javascript" src="script/tooltipster.bundle.min.js"></script>
 
-	</html>
+	<script type="text/javascript" src="script/script.js"></script>
+	<script type="text/javascript" src="script/nostalgia.js"></script>
+	<script type="text/javascript" src="script/main.js"></script>
+
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-75337739-1', 'auto');
+		ga('send', 'pageview');
+	</script>
+
+</body>
+
+</html>
