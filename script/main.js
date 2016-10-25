@@ -35,10 +35,10 @@ $(document).ready(function()
 	
 	var slide=
 	[
+	{image:'media/image/background/04.jpg',title:''},
 	{image:'media/image/background/02.jpg',title:''},
 	{image:'media/image/background/01.jpg',title:''},
-	{image:'media/image/background/03.jpg',title:''},
-	{image:'media/image/background/04.jpg',title:''}
+	{image:'media/image/background/03.jpg',title:''}
 	];
 	
 	
