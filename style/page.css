@@ -7,6 +7,16 @@
 /*  Paragraph															  */
 /**************************************************************************/
 
+a.link-text {
+	font-size: 10pt;
+    text-transform: none;
+    font-weight: 100;
+    color: #fff;
+    display: inline;
+    padding: 5px 8px 5px 8px;
+    background-color: #000000;
+}
+
 p.subtitle-paragraph
 {
 	margin-bottom:40px;
