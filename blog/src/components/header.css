@@ -1,0 +1,192 @@
+.header {
+    font-weight: 400;
+    box-sizing: inherit;
+    margin: 0;
+    padding-bottom: 0px !important;
+    -webkit-box-align: center;
+    align-items: center;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    transition: padding 0.5s ease 0s;
+    border-bottom: 1px solid #d9d9d9;
+    height: 50px;
+    background-color: #f8f8f8;
+    left: 0px;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 1;
+    padding: 0px 0px 0 20px;
+}
+
+.logoType {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    -webkit-box-align: center;
+    align-items: center;
+    display: flex;
+    text-align: left;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    flex-shrink: 0;
+    width: auto;
+}
+
+.menu {
+    font-weight: 400;
+    box-sizing: inherit;
+    margin: 0;
+    -webkit-box-align: center;
+    align-items: center;
+    top: 0;
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    left: 0;
+    max-height: 50px;
+    padding: 0 10px;
+    width: 100%;
+    z-index: 1;
+    border-top: none;
+    background: transparent;
+    display: flex;
+    position: relative;
+    -webkit-box-pack: end;
+    justify-content: flex-end;
+    transition: none;
+}
+
+.logo {
+    font-weight: 400;
+    color: rgb(102, 102, 102);
+    text-align: left;
+    -webkit-box-direction: normal;
+    box-sizing: inherit;
+    padding: 0;
+    display: inline-block;
+    border-radius: 5px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(238, 238, 238);
+    border-image: initial;
+    overflow: hidden;
+    transition: all 0.5s ease 0s;
+    margin: 0px 10px 0px 0px;
+    height: 36px;
+    width: 36px;
+    flex-shrink: 0;
+}
+
+.type {
+    text-align: left;
+    -webkit-box-direction: normal;
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+
+    border: 0;
+    vertical-align: baseline;
+    background-color: transparent;
+    text-decoration: none;
+    transition: 0.4s ease;
+    flex-shrink: 0;
+    display: block;
+    color: #131313;
+}
+
+.type h1 {
+    text-align: left;
+    padding: 0;
+    margin: 0px 0px 2px;
+    font-size: 1.7rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+}
+
+.logoType:hover {
+    text-decoration: none;
+}
+
+.itemList {
+    font-weight: 400;
+    box-sizing: inherit;
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    position: relative;
+    width: 100%;
+    -webkit-box-pack: end;
+    justify-content: flex-end;
+    padding: 0;
+}
+
+.itemList .item:hover {
+    color: black;
+    font-weight: 900;
+}
+
+.itemList .item:first-child {
+    border-left: none;
+}
+.itemList .item {
+    font-weight: 400;
+    list-style: none;
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    transition: all 0.5s;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.itemList .item .icons {
+    height: 3rem;
+    border-left: 1px solid #d9d9d9;
+    padding-left: 12px;
+}
+
+
+.itemList .item img:hover {
+    opacity: 1;
+}
+.itemList .item img {
+    height: 1.6rem;
+    padding: 0;
+    margin: 6px 10px 3px 0;
+    opacity: 0.65;
+}
+
+.itemList .item a svg {
+    height: 1.6rem;
+    padding: 0;
+    margin: 2px 6px 0 0;
+}
+
+.itemList .item:first-child > a {
+    border-left: none;
+}
+
+.itemList .item > a {
+    line-height: 3rem;
+    font-weight: 400;
+    list-style: none;
+    box-sizing: inherit;
+    text-decoration: none;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    color: inherit;
+    margin: 10px 10px 10px 0;
+    padding-left: 10px;
+    transition: all 0s;
+    border-radius: 5px;
+
+    border-left: 1px solid #d9d9d9;
+}

@@ -1,0 +1,76 @@
+.post-content .kg-image {
+    margin: auto;
+    max-width: 1024px;
+}
+
+.post-content .post-content-body p code {
+    font-style: normal;
+    padding: 2px;
+    word-break: keep-all;
+    font-size: 1.5rem;
+    background-color: #ededed;
+}
+
+.post-content th,
+.post-content td {
+    font-size: 1.7rem;
+}
+
+.post-content {
+    padding: 0 !important;
+}
+
+
+.gatsby-highlight .gatsby-highlight-code-line {
+    min-height: 1.44em;
+    margin-right: 0;
+    display: block;
+    background-color: #ededed;
+    margin-left: -60px;
+    padding-left: 22px;
+    border-left: 40px solid #ffeebb;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+    background: inherit !important;
+}
+
+@media (max-width: 650px) {
+    .type {
+        display: none;
+    }
+
+    .post-content > header > * {
+        min-width: 100px!important;
+    }
+
+    .post-content > .post-content-body > * {
+        min-width: 100px!important;
+    }
+}
+
+
+.post-content > header > * {
+    min-width: 600px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+.post-content > header > h1 {
+    font-size: 4.5rem;
+    margin-bottom: 15px;
+}
+
+.post-content > .post-content-body > * {
+    min-width: 600px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
