@@ -64,12 +64,12 @@ Imagine, we have a component which displays a user based on the passed user id, 
 
 When using the `useEffect` hook, we solved the issue with the prohibited side effects in the render method.
 However when using calls with dependencies (e.g. like in the example above), we actually introduced a new problem:
-When the effect is re-triggered and our asyncronous function is called again, we now have a race condition.
+When the effect is re-triggered and our asynchronous function is called again, we now have a race condition.
 
 Imagine, the component is rendered as `<ShowUser userId={1} />`. When the component is mounted, the call to load user 1 is triggered as expected.
 Now the component's `userId` property changes: `<ShowUser userId={2} />`. The component is then re-rendered with the changed property.
 Subsequently also the effect is re-executed and the call to load user 2 is triggered.
-Everything works as expected unless in some (possibly) rare cases, the first call takes longer to resolve then the second call. What would happen in this case, first the `setResult(<user 2>)` is called, and after the first call finally is resolved `setResult(<user 1>)`. This in turn would then certainly display the wrong user.
+Everything works as expected unless in some (possibly) rare cases, the first call takes longer to resolve than the second call. What would happen in this case, first the `setResult(<user 2>)` is called, and after the first call finally is resolved `setResult(<user 1>)`. This in turn would then certainly display the wrong user.
 
 Remember, one additional challenge in the naive approach was, that there was no cleanup function, which could lead to problems, when the component is unmounted.
 
@@ -131,7 +131,7 @@ Inside the effect, we need to check whether the counter is greater than zero, si
 Furthermore for every button press, the counter is increased, and then, of course, is greater than zero, causing the effect to re-execute.
 The reason we use a increasing counter here, and not just a boolean variable, is that for subsequent button presses we also want want the call to be triggered, so we have to make sure our helper dependency changes every time the trigger callback function is invoked.
 
-> Note that the example is slighty wrong for keeping the code simple and for explaining the idea: When the `counter` variable is zero, we return `Promise.resolve()`, which causes the `usePromise` hook to return a wrong state to the caller.
+> Note that the example is slightly wrong for keeping the code simple and for explaining the idea: When the `counter` variable is zero, we return `Promise.resolve()`, which causes the `usePromise` hook to return a wrong state to the caller.
 
 Again, we can abstract the details away by creating a custom hook as a variant of the `usePromise` hook:
 
@@ -160,5 +160,5 @@ We can summarize the use cases for our hooks:
 
 | Hook                   | Use case                                                                                                                  |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------- |
-| `usePromise`           | Trigger an asyncronous call on component render, and/or when one the dependency values of the asyncronous function change |
-| `usePromiseOnCallback` | Trigger an asyncronous call using a callback function, e.g. when a button is clicked or a different event happens         |
+| `usePromise`           | Trigger an asynchronous call on component render, and/or when one the dependency values of the asynchronous function change |
+| `usePromiseOnCallback` | Trigger an asynchronous call using a callback function, e.g. when a button is clicked or a different event happens         |
