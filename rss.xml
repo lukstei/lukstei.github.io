@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Lukas Steinbrecher]]></title><description><![CDATA[Lukas Steinbrecher's personal blog]]></description><link>https://lukstei.com</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 29 Oct 2019 21:55:16 GMT</lastBuildDate><item><title><![CDATA[Doing asynchronous calls using React hooks]]></title><description><![CDATA[Doing asynchronous calls using React hooks is not straightforward.
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Lukas Steinbrecher]]></title><description><![CDATA[Lukas Steinbrecher's personal blog]]></description><link>https://lukstei.com</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 29 Oct 2019 22:14:47 GMT</lastBuildDate><item><title><![CDATA[Doing asynchronous calls using React hooks]]></title><description><![CDATA[Doing asynchronous calls using React hooks is not straightforward.
 One has to know how correctly write a functional component and also…]]></description><link>https://lukstei.com/2019-10-27-doing-asynchronous-calls-using-react-hooks/</link><guid isPermaLink="false">https://lukstei.com/2019-10-27-doing-asynchronous-calls-using-react-hooks/</guid><pubDate>Sun, 27 Oct 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;
 Doing asynchronous calls using React hooks is not straightforward.
 One has to know how correctly write a functional component and also comply to the &lt;a href=&quot;https://reactjs.org/docs/hooks-rules.html&quot;&gt;Rules of hooks&lt;/a&gt;.&lt;/p&gt;
@@ -145,11 +145,11 @@ This is the behaviour we want in our example.&lt;/p&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot; style=&quot;white-space: normal; width: auto; left: 0;&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
 &lt;p&gt;When using the &lt;code&gt;useEffect&lt;/code&gt; hook, we solved the issue with the prohibited side effects in the render method.
 However when using calls with dependencies (e.g. like in the example above), we actually introduced a new problem:
-When the effect is re-triggered and our asyncronous function is called again, we now have a race condition.&lt;/p&gt;
+When the effect is re-triggered and our asynchronous function is called again, we now have a race condition.&lt;/p&gt;
 &lt;p&gt;Imagine, the component is rendered as &lt;code&gt;&amp;#x3C;ShowUser userId={1} /&gt;&lt;/code&gt;. When the component is mounted, the call to load user 1 is triggered as expected.
 Now the component’s &lt;code&gt;userId&lt;/code&gt; property changes: &lt;code&gt;&amp;#x3C;ShowUser userId={2} /&gt;&lt;/code&gt;. The component is then re-rendered with the changed property.
 Subsequently also the effect is re-executed and the call to load user 2 is triggered.
-Everything works as expected unless in some (possibly) rare cases, the first call takes longer to resolve then the second call. What would happen in this case, first the &lt;code&gt;setResult(&amp;#x3C;user 2&gt;)&lt;/code&gt; is called, and after the first call finally is resolved &lt;code&gt;setResult(&amp;#x3C;user 1&gt;)&lt;/code&gt;. This in turn would then certainly display the wrong user.&lt;/p&gt;
+Everything works as expected unless in some (possibly) rare cases, the first call takes longer to resolve than the second call. What would happen in this case, first the &lt;code&gt;setResult(&amp;#x3C;user 2&gt;)&lt;/code&gt; is called, and after the first call finally is resolved &lt;code&gt;setResult(&amp;#x3C;user 1&gt;)&lt;/code&gt;. This in turn would then certainly display the wrong user.&lt;/p&gt;
 &lt;p&gt;Remember, one additional challenge in the naive approach was, that there was no cleanup function, which could lead to problems, when the component is unmounted.&lt;/p&gt;
 &lt;p&gt;We can solve both problems using a cleanup function inside the effect.
 In the function passed to the &lt;code&gt;useEffect&lt;/code&gt; hook, we can return a callback function, which is executed when the effect is cleaned up. This cleanup happens each time the dependency array changes and at the very end, i.e. when the component is unmounted.&lt;/p&gt;
@@ -321,7 +321,7 @@ We can leverage this behaviour here, by introducing a helper dependency value, w
 Furthermore for every button press, the counter is increased, and then, of course, is greater than zero, causing the effect to re-execute.
 The reason we use a increasing counter here, and not just a boolean variable, is that for subsequent button presses we also want want the call to be triggered, so we have to make sure our helper dependency changes every time the trigger callback function is invoked.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Note that the example is slighty wrong for keeping the code simple and for explaining the idea: When the &lt;code&gt;counter&lt;/code&gt; variable is zero, we return &lt;code&gt;Promise.resolve()&lt;/code&gt;, which causes the &lt;code&gt;usePromise&lt;/code&gt; hook to return a wrong state to the caller.&lt;/p&gt;
+&lt;p&gt;Note that the example is slightly wrong for keeping the code simple and for explaining the idea: When the &lt;code&gt;counter&lt;/code&gt; variable is zero, we return &lt;code&gt;Promise.resolve()&lt;/code&gt;, which causes the &lt;code&gt;usePromise&lt;/code&gt; hook to return a wrong state to the caller.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Again, we can abstract the details away by creating a custom hook as a variant of the &lt;code&gt;usePromise&lt;/code&gt; hook:&lt;/p&gt;
 &lt;p&gt;&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;jsx&quot;&gt;&lt;pre style=&quot;counter-reset: linenumber NaN&quot; class=&quot;language-jsx line-numbers&quot;&gt;&lt;code class=&quot;language-jsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; React&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; useEffect&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; useState &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;react&quot;&lt;/span&gt;
@@ -408,11 +408,11 @@ We also abstracted the imperative triggering logic away using a custom &lt;code&
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;usePromise&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Trigger an asyncronous call on component render, and/or when one the dependency values of the asyncronous function change&lt;/td&gt;
+&lt;td&gt;Trigger an asynchronous call on component render, and/or when one the dependency values of the asynchronous function change&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;usePromiseOnCallback&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Trigger an asyncronous call using a callback function, e.g. when a button is clicked or a different event happens&lt;/td&gt;
+&lt;td&gt;Trigger an asynchronous call using a callback function, e.g. when a button is clicked or a different event happens&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;</content:encoded></item></channel></rss>
