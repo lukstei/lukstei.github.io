@@ -13,6 +13,24 @@ import githubIcon from '../../content/assets/icons/github.svg';
 import mailIcon from '../../content/assets/icons/mail.svg';
 
 
+const About = styled.div`
+    .kg-image {
+        width: 400px!important;
+        height: 400px!important;
+        max-width: 100%;
+        max-height: 100%;
+    }
+    
+    @media (max-width: 650px) {
+        .kg-image {
+            width: 250px!important;
+            height: 250px!important;
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
+`
+
 const Icons = styled.ul`
     && {
         list-style: none; 
@@ -40,7 +58,6 @@ const Icons = styled.ul`
     img {
         width: 50px;
     }
-
 `
 
 export default function AboutContent() {
@@ -61,8 +78,8 @@ export default function AboutContent() {
   }
 `}
         render={data => (
-            <>
-                <Img style={{display: "block", width: "50vw", height: "50vw", maxWidth: 400, borderRadius: 20, margin: "40px auto"}}
+            <About>
+                <Img style={{display: "block", borderRadius: 20, margin: "40px auto"}}
                      className="kg-image"
                      fixed={data.profileImage.childImageSharp.fixed}
                      alt={"Lukas Steinbrecher"}
@@ -88,7 +105,7 @@ export default function AboutContent() {
                         alt="LinkedIn"/></a></li>
                     <li><a href={`mailto:lukas@${mSuffix}`}><img src={mailIcon} alt="Mail"/></a></li>
                 </Icons>
-            </>
+            </About>
         )}
     />;
 }
