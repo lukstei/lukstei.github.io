@@ -31,6 +31,8 @@ const AboutPage = ({data}, location) => {
                     <Header>About</Header>
 
                     <AboutContent/>
+
+                    <a href="/impressum">Impressum</a>
                 </div>
             </article>
         </Layout>
