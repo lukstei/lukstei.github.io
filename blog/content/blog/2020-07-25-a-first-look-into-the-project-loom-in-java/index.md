@@ -29,5 +29,5 @@ Preview builds of Project Loom are available at https://jdk.java.net/loom/. At f
 Ideally, the end user of a framework won't notice much, but will benefit from it bit by bit when virtual thread support is arriving in frameworks and libraries. Whether it is really possible to reuse as much code without changes as the Project-Loom developers had in mind will become apparent over time.
 
 
-> To learn more about the Project Loom, non-blocking IO and asynchronous abstractions, take a look at the slides or watch my talk I did for the Senacor StreamedCon (in german): `youtube: https://www.youtube.com/watch?v=8n-q-q0Zo5Y`
+> To learn more about the Project Loom, non-blocking IO and asynchronous abstractions, watch my talk I did for the Senacor StreamedCon (in german) or take a look at the [slides](async-await-talk.pdf) `youtube: https://www.youtube.com/watch?v=8n-q-q0Zo5Y`
 
