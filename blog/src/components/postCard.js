@@ -3,6 +3,8 @@ import { Link } from "gatsby"
 import styled from "@emotion/styled"
 
 const Post = styled.div`
+    margin-bottom: 1.5em;
+
     .date {
         font-weight: 700;
         text-transform: uppercase;

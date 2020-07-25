@@ -12,17 +12,6 @@ module.exports = {
         },
     },
     plugins: [
-        {
-            resolve: "gatsby-remark-embed-video",
-            options: {
-                /*width: 800,
-                ratio: 1.77, 
-                height: 400, 
-                related: false,
-                noIframeBorder: true*/
-            }
-        },
-
         `gatsby-plugin-emotion`,
         {
             resolve: `gatsby-source-filesystem`,
@@ -42,16 +31,22 @@ module.exports = {
             resolve: `gatsby-transformer-remark`,
             options: {
                 plugins: [
+                    {
+                        resolve: "gatsby-remark-embed-video",
+                        options: {
+                            width: 600,
+                            ratio: 1.77,
+                        }
+                    },
                     `gatsby-remark-embed-snippet`,
                     `gatsby-remark-copy-linked-files`,
                     {
                         resolve: `gatsby-remark-images`,
                         options: {
-                            maxWidth: 1360,
-                            withWebp: true,
+                            maxWidth: 1300,
                             showCaptions: true,
                             quality: 75,
-                            wrapperStyle: `margin: 7vw 0;`,
+                            wrapperStyle: `margin-top: 4em; margin-bottom: 4em;`,
                         },
                     },
                     {

@@ -3,6 +3,7 @@
     max-width: 1024px;
 }
 
+
 .post-content .post-content-body p code {
     font-style: normal;
     word-break: keep-all;
@@ -73,3 +74,24 @@
     margin-right: auto;
     text-align: left;
 }
+
+.post-content > .post-content-body .gatsby-resp-image-figure  {
+    max-width: 1000px;
+}
+
+.post-content > .post-content-body .gatsby-resp-iframe-wrapper  {
+    max-width: 1000px;
+    max-height: 500px;
+}
+
+.post-content > .post-content-body .gatsby-resp-image-figure figcaption:before {
+    content: "Figure: ";font-style: italic;
+
+}
+.post-content > .post-content-body .gatsby-resp-image-figure figcaption {
+    font-style: italic;
+    font-size: 85%;
+    margin-top: 0.7em;
+    text-align: center;
+}
+
