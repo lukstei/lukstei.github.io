@@ -1,4 +1,124 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Lukas Steinbrecher]]></title><description><![CDATA[Lukas Steinbrecher's personal blog]]></description><link>https://lukstei.com</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 29 Nov 2019 11:45:44 GMT</lastBuildDate><item><title><![CDATA[Doing asynchronous calls using React hooks]]></title><description><![CDATA[Doing asynchronous calls using React hooks is not straightforward.
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Lukas Steinbrecher]]></title><description><![CDATA[Lukas Steinbrecher's personal blog]]></description><link>https://lukstei.com</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 25 Jul 2020 11:25:52 GMT</lastBuildDate><item><title><![CDATA[A first look into the Project Loom in Java]]></title><description><![CDATA[The Project Loom is a project of the JDK team to implement virtual (“green”) threads on the Java platform. In the Java world the classic…]]></description><link>https://lukstei.com/2020-07-25-a-first-look-into-the-project-loom-in-java/</link><guid isPermaLink="false">https://lukstei.com/2020-07-25-a-first-look-into-the-project-loom-in-java/</guid><pubDate>Sat, 25 Jul 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;The &lt;a href=&quot;https://wiki.openjdk.java.net/display/loom/Main&quot;&gt;Project Loom&lt;/a&gt; is a project of the JDK team to implement virtual (“green”) threads on the Java platform.&lt;/p&gt;
+&lt;p&gt;In the Java world the classic thread-per-request model is still very common. In this model, a separate thread is started on a web server for each incoming request to process the request. This “blocking” of the thread is done to pretend that an operation (e.g. reading a network socket) is synchronous. However, since operating system threads are relatively heavy, they are a limited resource in general and often the first bottleneck that prevents a machine from processing more requests per time unit.&lt;/p&gt;
+&lt;p&gt;To get around this bottleneck, non-blocking APIs are used which then do not block the thread. In Node.JS or Vertx, an event loop execution model is used, which encapsulates the asynchrony of operations, which then has to be handled directly by the consumer via asynchronous abstractions like callbacks or futures. However, the Project-Loom developers choose a different approach: non-blocking APIs are encapsulated by existing (synchronous) Java APIs and made “virtual-thread-ready” by blocking the virtual thread until the desired operation is completed. Thus, the synchronicity of the call is simulated at the virtual thread level, just as the operating system does with blocking syscalls with “real” threads. The semantics of the interface remain the same and therefore no changes on the consumer side are necessary.&lt;/p&gt;
+&lt;p&gt;
+  &lt;figure class=&quot;gatsby-resp-image-figure&quot; style=&quot;margin-top: 4em; margin-bottom: 4em;&quot;&gt;
+  
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/12bad7519e4b4e855c9c68061d84314c/04312/virtual-thread-synchron2.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 1300px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 41.78403755868545%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAABYlAAAWJQFJUiTwAAABX0lEQVQoz32RyXLDIBBE9fH+JP+Fbz4mlViyNrQgBEKgxXZnZmK7coqqKBB0P3qGZF1XbNuGEAKappExjiOGYUDf97jmuextpIsxQmuNoiiQZRnqusY8z+K/3+/Y9x3JG0gHIcxYlgVmMLiSoVU1DQVFRgZUNCuCp2mKtm1xuVwwTZN4FOl4/QTu8PRjJoO4rOgJyMORuStyXIsan98ZPr4y6GEEezgZz845CXQ+n5FTNe+E3k/wwUtsS6KirKRkTseX1aqR/a7rUJalgNjLqR6PB47HoyR/A2fvKXok4EZGS6ZKzCmVpfUA3ShphWpalNRD7jn39JXwcDjgdDr9BU4IMWBZN5jRSkJrrZy5aUYkuDWWyq+kdwzj3r1K548fJmHD7XZDpBs5vnUTBm0kjTUGnhI4Ajvr5AJ+fUP7nIz1nipjBsMZnMwhUn8ULAn9oH+FlJbNInoK/xsMfK1/AOuUYQB12JZsAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;Virtual threads to translate asynchronous APIs into synchronous ones&quot;
+        title=&quot;Virtual threads to translate asynchronous APIs into synchronous ones&quot;
+        src=&quot;/static/12bad7519e4b4e855c9c68061d84314c/c671f/virtual-thread-synchron2.png&quot;
+        srcset=&quot;/static/12bad7519e4b4e855c9c68061d84314c/e3106/virtual-thread-synchron2.png 325w,
+/static/12bad7519e4b4e855c9c68061d84314c/760a4/virtual-thread-synchron2.png 650w,
+/static/12bad7519e4b4e855c9c68061d84314c/c671f/virtual-thread-synchron2.png 1300w,
+/static/12bad7519e4b4e855c9c68061d84314c/c3285/virtual-thread-synchron2.png 1950w,
+/static/12bad7519e4b4e855c9c68061d84314c/04312/virtual-thread-synchron2.png 2556w&quot;
+        sizes=&quot;(max-width: 1300px) 100vw, 1300px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    
+  &lt;figcaption class=&quot;gatsby-resp-image-figcaption&quot;&gt;Virtual threads to translate asynchronous APIs into synchronous ones&lt;/figcaption&gt;
+  &lt;/figure&gt;
+      &lt;/p&gt;
+&lt;p&gt;How exactly is such a virtual thread implemented in Project Loom? A virtual thread is represented by a so-called continuation. This is a piece of sequential code that can suspend itself (e.g. when waiting for an external resource) and can be continued at a later time. These continuations are executed by the JVM on real operating system threads (“carrier threads”) in sequence using a (configurable) scheduler.&lt;/p&gt;
+&lt;p&gt;As a major advantage of virtual threads over the event loop approach, is that one can take advantage of the modern and efficient world of non-blocking APIs without changing their familiar thread-per-request programming model, and ideally to benefit from these changes without code changes from existing code bases. Existing interfaces are not broken and the necessary changes happen “under the hood”.&lt;/p&gt;
+&lt;p&gt;
+  &lt;figure class=&quot;gatsby-resp-image-figure&quot; style=&quot;margin-top: 4em; margin-bottom: 4em;&quot;&gt;
+  
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/cc2ad1179328172a133661e162b4c269/e35ae/socket-api-ready.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 1300px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 49.03846153846154%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAABYlAAAWJQFJUiTwAAAB1ElEQVQozz2SW7OiMBCE+f+/ax/27MNWbXkXBAyEcI3cBRV7Z4bjsWqKEDqfPT1x0iSGNhpZnn9XgaKySE0KrQ3Cq4K93TAOA5QKkBhD+wmyjLWlaE1iEJNWJwkcW+ao6xpN0yJNUxJmqJsGVVniRqDHY0bXdVQtsqpG148Ig0B01lqpgtYZne37Do4hR7bt8Xq9cLlcEJB4IDfzPMve+w0SDgLNbINxmuG6Lvb7Pbbb7U8dDgfk1KGTFRWJHpimSYDX61U+sLv7/U7ANwH7FVg16Ia7wBjAet/35Q94za4dzmy8TwIMCaaiWNYMWpYF/GPHbdsi/3bIhz8QBnqeJ52VFNPqcH7CGCNADlxrjYQCjuOYcs3EHQPLusU0ry17BGOQwOkZRRGKooCTEtB2o9Bz2uCDH0BDw2llIGvL7HB6PKEjhegaylPHCrEKcbOlRCTAgTKM6COHez6fpXa7neR0PB7lFnCOprzh+Vpw8DV+/T3hz8bD738uvjbkVtGUh3FteX4udO/MD+B0OkkrDFZKrQ7JcUpDWWjqx8Bg40Y4+gnBE3pPcA4NbNPD0XQpA7q8YRhKwFwM4Qw/VdeNDMYPqVUaWnDx4HsufH5SBf76bkj7H2Zh55/kTBmbAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;JEP 353: Preparation of the Socket API for virtual thread readiness&quot;
+        title=&quot;JEP 353: Preparation of the Socket API for virtual thread readiness&quot;
+        src=&quot;/static/cc2ad1179328172a133661e162b4c269/c671f/socket-api-ready.png&quot;
+        srcset=&quot;/static/cc2ad1179328172a133661e162b4c269/e3106/socket-api-ready.png 325w,
+/static/cc2ad1179328172a133661e162b4c269/760a4/socket-api-ready.png 650w,
+/static/cc2ad1179328172a133661e162b4c269/c671f/socket-api-ready.png 1300w,
+/static/cc2ad1179328172a133661e162b4c269/c3285/socket-api-ready.png 1950w,
+/static/cc2ad1179328172a133661e162b4c269/e35ae/socket-api-ready.png 2496w&quot;
+        sizes=&quot;(max-width: 1300px) 100vw, 1300px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    
+  &lt;figcaption class=&quot;gatsby-resp-image-figcaption&quot;&gt;JEP 353: Preparation of the Socket API for virtual thread readiness&lt;/figcaption&gt;
+  &lt;/figure&gt;
+      &lt;/p&gt;
+&lt;p&gt;It is also not necessary, as for example in Javascript, to split its code into two worlds (synchronous/asynchronous) (the so-called Blue/Red-World problem, see &lt;a href=&quot;http://journal.stuffwithstuff.com/2015/02/01/what-color-is-your-function/&quot;&gt;Blog post: What Color is Your Function?&lt;/a&gt;).
+
+  &lt;figure class=&quot;gatsby-resp-image-figure&quot; style=&quot;margin-top: 4em; margin-bottom: 4em;&quot;&gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 1300px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 57.08263069139966%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAABYlAAAWJQFJUiTwAAACRUlEQVQoz22STUsbQRjH996XfAAJaYQGAotK8JCYFwJBc2rVzbUUGr9CPkcvfoEmaw5C6Unb5OJdjFijVqw0rZdSU113s2/ztvN0ZqLU2M7yY3Z32N8+z39G29ncefTlZPf14Odgbfj7uv7rclgffP9RP+if1PcO+vXe56MJ5Ls7ev3jeu/w+M3+4fFa7/Do1YetT0+09bfrz3v7u3D69RTOzs7g/PwcwjCEEGFAhAK+BRGiZkKZIAKMMQS2A9fWDbieDxffLvjW+01dSzxLpBYXl4LqUpXPzc3RWq3GCCYsJCG78S3mhA5z0Yj52GcAXAB/4VxCxT0QjJ3ux21di8fjqUIhjyqVCgghX15e5pRSjgjitm/zUTDiHvK4j3xFgAMeRRHnXKhAESkhpW6n09W16enpVC6XQ+VyGTKZDF9dXQWqWkRgeRYIGQiRglAC0iTH2KgYCwnxOp2OriWTyVSpVEIC0HWdr6ysgKhQCS/tS3BDF0IcAmV0QnZPOimUFWazWZTP52FmZoYbhiEXIUABXLlXINoGJ3CUmEXsYXX/r3BhYQFVq1UQ4khsCheLnDAiMhtnJ1qVJfGx659xJ3SVMJFIpIrFospwdnZWtswZY2pTRIYcU3wrE1+K6058DyUUMXndbndcoaiMFAoFuSkgN0WeQzdwYWgPwfZsheVa4PiOikP8UOUskc9yBEHgb2+LYxOLxR6L7F6m0+na1NSUMT8/bzTfNQ1zwzSaraaiZbbU3N5oK0zTfEit3W6/aDQaT/8AZ++p5G9K1JcAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;Symptom of the Blue/Red-World problem in node.js: The same functionality must be provided in both variants (synchronous/asynchronous)&quot;
+        title=&quot;Symptom of the Blue/Red-World problem in node.js: The same functionality must be provided in both variants (synchronous/asynchronous)&quot;
+        src=&quot;/static/0af0204213ba3f73f630041ec277ac38/c671f/node.png&quot;
+        srcset=&quot;/static/0af0204213ba3f73f630041ec277ac38/e3106/node.png 325w,
+/static/0af0204213ba3f73f630041ec277ac38/760a4/node.png 650w,
+/static/0af0204213ba3f73f630041ec277ac38/c671f/node.png 1300w,
+/static/0af0204213ba3f73f630041ec277ac38/c3285/node.png 1950w,
+/static/0af0204213ba3f73f630041ec277ac38/287bd/node.png 2372w&quot;
+        sizes=&quot;(max-width: 1300px) 100vw, 1300px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;figcaption class=&quot;gatsby-resp-image-figcaption&quot;&gt;Symptom of the Blue/Red-World problem in node.js: The same functionality must be provided in both variants (synchronous/asynchronous)&lt;/figcaption&gt;
+  &lt;/figure&gt;
+      &lt;/p&gt;
+&lt;p&gt;Preview builds of Project Loom are available at &lt;a href=&quot;https://jdk.java.net/loom/&quot;&gt;https://jdk.java.net/loom/&lt;/a&gt;. At first glance one won’t see much change, because the existing thread APIs are reused for virtual threads as much as possible.&lt;/p&gt;
+&lt;p&gt;Ideally, the end user of a framework won’t notice much, but will benefit from it bit by bit when virtual thread support is arriving in frameworks and libraries. Whether it is really possible to reuse as much code without changes as the Project-Loom developers had in mind will become apparent over time.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;To learn more about the Project Loom, non-blocking IO and asynchronous abstractions, watch my talk I did for the Senacor StreamedCon (in german) or take a look at the &lt;a href=&quot;/382cd48c69f12f72086b11b1f5c18dc7/async-await-talk.pdf&quot;&gt;slides&lt;/a&gt; &lt;div class=&quot;gatsby-resp-iframe-wrapper&quot; style=&quot;padding-bottom: 56.49999999999999%; position: relative; height: 0; overflow: hidden; margin-bottom: 1.0725rem&quot; &gt; &lt;div class=&quot;embedVideo-container&quot;&gt; &lt;iframe title src=&quot;https://www.youtube.com/embed/8n-q-q0Zo5Y?rel=0&quot; class=&quot;embedVideo-iframe&quot; style=&quot;border:0; position: absolute; top: 0; left: 0; width: 100%; height: 100%; &quot; allowfullscreen&gt;&lt;/iframe&gt; &lt;/div&gt; &lt;/div&gt;&lt;/p&gt;
+&lt;/blockquote&gt;</content:encoded></item><item><title><![CDATA[Doing asynchronous calls using React hooks]]></title><description><![CDATA[Doing asynchronous calls using React hooks is not straightforward.
 One has to know how correctly write a functional component and also…]]></description><link>https://lukstei.com/2019-10-27-doing-asynchronous-calls-using-react-hooks/</link><guid isPermaLink="false">https://lukstei.com/2019-10-27-doing-asynchronous-calls-using-react-hooks/</guid><pubDate>Sun, 27 Oct 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;
 Doing asynchronous calls using React hooks is not straightforward.
 One has to know how correctly write a functional component and also comply to the &lt;a href=&quot;https://reactjs.org/docs/hooks-rules.html&quot;&gt;Rules of hooks&lt;/a&gt;.&lt;/p&gt;
