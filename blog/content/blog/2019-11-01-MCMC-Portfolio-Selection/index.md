@@ -182,6 +182,9 @@ sds.efficient = apply(ws.efficient, 2, function(w) sd.p(w, cov))
 We plot the assets, the efficient portfolio, the global minimum variance portfolio and the efficient frontier (representing all obtainable efficient portfolios) in the standard deviation vs. expected return space:
 ![Example: Mean/Var plot](./mean-var-ex-plot.png)
 
+Investing in the efficient portfolio with target return 10%, would mean putting 53% and 29% of our wealth in stock 1 and 2, and the remainder of 18% into the bond. Our constructed portfolio has as nearly as much expected return as the stocks ($\mu_{p eff} = 10\%$), while having much lower standard deviation of $\sigma_{p eff} = 15.6\%$. We also clearly see, the global minimum variance portfolio has the lowest standard deviation among all obtainable portfolios ($\sigma_{p gmv} = 9.2\%$).
+
+
 ```R
 par(mfrow=c(1, 1),
   oma = c(0,0,0.5,0) + 0.1,
@@ -197,6 +200,12 @@ points(sd.p(w.gmv, cov), mu.p(w.gmv, mus), col='green', pch=19, cex=2)
 par(mfrow=c(1, 1))
 ```
 
+## Different formulations 
+
+Different formulations for the efficient portfolio formulation (as defined in the preceding chapter) have been discussed, e.g. by introducing a risk free asset, incorporating additional constraints into the optimization problem, such as transaction cost constraints, maximum holding constraints, or by using a different optimization function, by not minimizing the variance but instead, for example, the value at risk.
+   
+One important constraint, which was already discussed by Markowitz in his original paper, and which we will be using in our experiments, is the short sale constraint, which disallows short-selling, i.e. all individual asset weights must be greater than or equal to 0. This is a constraint, with  which many investors are confronted in practice, since short-selling may involve regulatory (short selling may be disallowed for certain accounts) or practical hurdles (short selling involves  borrowing an asset from a third party which is willing to lend, which may not be available, also this could incorporate additional short-sale fees). 
+To solve the portfolio optimization problem with the short sale constraint analytically, an iterative Kuhn-Tucker approach can be used \citep[e.g., see][]{jagannathan2002risk}. Also numerical optimizers, i.e., linear-quadratic solvers, efficiently implement this iterative approach.
 
 
 ## Appendix: Utility maximization formulation
