@@ -6,7 +6,7 @@ author: Lukas Steinbrecher
 date: 2021-11-21
 ---
 
-This arctive describes how to build a service that automatically creates thumbnails of uploaded pictures that can, for example, be used for a blog.
+This article describes how to build a service that automatically creates thumbnails of uploaded pictures that can, for example, be used for a blog.
 
 To create our service we will use S3 - the AWS file storage service - to store the pictures and thumbnails, and AWS Lambda - the AWS serverless computing service - to create the thumbnails.
 When a user uploads a picture to the source S3 bucket, a lambda function will be triggered, that will execute our code to generate the thumbnails and will put it into a target bucket. The process for doing so is described in the detailed step-by-step manual below.
