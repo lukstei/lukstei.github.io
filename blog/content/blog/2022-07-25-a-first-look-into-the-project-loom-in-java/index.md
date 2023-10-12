@@ -3,7 +3,7 @@ title: A first look into the Project Loom in Java
 tags: ["programming", "java", "asynchronous", "loom", "event loop", "NIO", "network"]
 thumbnail: ./virtual-thread-synchron2.png
 author: Lukas Steinbrecher
-date: 2020-07-25
+date: 2022-07-25
 ---
 
 The [Project Loom](https://wiki.openjdk.java.net/display/loom/Main) is a project of the JDK team to implement virtual ("green") threads on the Java platform.

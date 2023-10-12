@@ -3,7 +3,7 @@ title: Creating a serverless thumbnail service with AWS CDK
 tags: ["cloud", "programming", "aws", "typescript"]
 thumbnail: ./service.png
 author: Lukas Steinbrecher
-date: 2021-11-21
+date: 2023-03-02
 ---
 
 This article describes how to build a service that automatically creates thumbnails of uploaded pictures that can, for example, be used for a blog.

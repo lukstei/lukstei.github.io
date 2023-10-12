@@ -3,7 +3,7 @@ title: Introducing Reddit Hyped Stocks
 tags: ["programming", "stocks", "finance"]
 thumbnail: ./1.png
 author: Lukas Steinbrecher
-date: 2021-03-18
+date: 2022-08-17
 ---
 
 With Reddit Hyped Stocks you can explore currently hyped stocks on certain subreddits.
