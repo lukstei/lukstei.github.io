@@ -14,6 +14,14 @@ code {
   font-size: 1.4rem;
 }
 
+body.colorscheme-dark .chroma .hl {
+  background-color: #1E3E62;
+}
+
+.chroma .hl {
+  background-color: #F7EFDA;
+}
+
 .highlight {
   > div, > pre {
     box-shadow: 7px 7px 0px -3px rgba(98, 98, 98, 0.5);
