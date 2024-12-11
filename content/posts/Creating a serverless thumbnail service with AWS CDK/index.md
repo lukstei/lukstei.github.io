@@ -149,7 +149,7 @@ export class ThumbnailingBucket extends Construct {
         });
 ```
 
-Next, we define our lambda function. Here we are using a special construct named `NodejsFunction`, which automatically bundles the specified JS/TS file and their dependencies into a `.zip` file, as required by Lambda. This has the advantage that we can define the lambda code in the same package as the CDK code. If this is not wanted we could use the <a href="https://docs.aws.amazon.com/cdk/api/latest/docs/aws-lambda-readme.html#aws-lambda-construct-library" target="_blank">vanilla Lambda `Function` construct</a>.
+Next, we define our lambda function. Here we are using a special construct named `NodejsFunction`, which automatically bundles the specified JS/TS file and their dependencies into a `.zip` file, as required by Lambda. This has the advantage that we can define the lambda code in the same package as the CDK code. If this is not wanted we could use the [vanilla Lambda Function construct](https://docs.aws.amazon.com/cdk/api/latest/docs/aws-lambda-readme.html#aws-lambda-construct-library).
 
 The source code of the lambda function is located in `lib/ThumbnailingBucket.resizer.ts`. To spare you the details of the lambda code, its function can be summarized on a high level as a function that downloads the file which is passed to our Lambda handler by the S3 notification trigger. It then generates thumbnails using the `sharp` library and uploads the generated files to the destination bucket.
 

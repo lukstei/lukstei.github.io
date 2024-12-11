@@ -3,6 +3,7 @@ title: A simple job execution and monitoring setup for my home server
 tags: ["selfhosting", "programming"]
 author: Lukas Steinbrecher
 date: 2024-08-12
+draft: true
 ---
 
 ## The Quest for Simplicity
