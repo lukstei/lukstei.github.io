@@ -3,6 +3,7 @@ languageCode = 'en-'
 title = 'Lukas Steinbrecher'
 theme = "hugo-coder"
 defaultcontentlanguage = "en"
+enableGitInfo = true
 
 [pagination]
 pagerSize = 6
@@ -17,7 +18,7 @@ hl_Lines = ''
 hl_inline = false
 lineAnchors = ''
 lineNoStart = 1
-lineNos = true
+lineNos = false
 lineNumbersInTable = true
 noHl = false
 
@@ -29,16 +30,12 @@ tabWidth = 4
   keywords = "blog,developer,personal,software-engineering"
   avatarurl = "images/lukas.jpg"
   commit = true
-  #gravatar = "john.doe@example.com"
 
-  #faviconSVG = "/images/favicon.svg"
+  favicon = "/images/lukas.jpg"
   favicon_32 = "/images/favicon-32x32.png"
   favicon_16 = "/images/favicon-16x16.png"
-
   since = 2019
-
   enableTwemoji = true
-
   colorScheme = "auto"
   hidecolorschemetoggle = false
 
