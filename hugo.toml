@@ -28,6 +28,7 @@ tabWidth = 4
   description = "Lukas Steinbrecher's personal website"
   keywords = "blog,developer,personal,software-engineering"
   avatarurl = "images/lukas.jpg"
+  commit = true
   #gravatar = "john.doe@example.com"
 
   #faviconSVG = "/images/favicon.svg"
