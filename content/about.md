@@ -10,6 +10,18 @@ author = "Lukas Steinbrecher"
   showCopyright = true
 +++
 
+{{< html >}}
+<div class="avatar centered" style="margin: 2.3rem 0">
+  <img src="/images/lukas.jpg" alt="avatar">
+</div>
+{{< /html >}}
+
+{{< style >}}
+header {
+  display: none;
+}
+{{< /style >}}
+
 Welcome! My name is Lukas Steinbrecher and this is my personal blog where I write about techie stuff. I'm based in Vienna 🇦🇹.
 
 I am a passionate Software Engineer 👨🏼‍💻, currently consulting financial institutions at Senacor.

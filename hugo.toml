@@ -5,6 +5,9 @@ theme = "hugo-coder"
 defaultcontentlanguage = "en"
 enableGitInfo = true
 
+[security]
+enableInlineShortcodes = true
+
 [pagination]
 pagerSize = 6
 
