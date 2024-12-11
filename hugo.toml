@@ -1,0 +1,79 @@
+baseURL = 'https://lukstei.com/'
+languageCode = 'en-'
+title = 'Lukas Steinbrecher'
+theme = "hugo-coder"
+defaultcontentlanguage = "en"
+
+[pagination]
+pagerSize = 6
+
+[markup.highlight]
+style = "github-dark"
+noClasses = false
+anchorLineNos = false
+codeFences = true
+guessSyntax = false
+hl_Lines = ''
+hl_inline = false
+lineAnchors = ''
+lineNoStart = 1
+lineNos = true
+lineNumbersInTable = true
+noHl = false
+
+tabWidth = 4
+[params]
+  author = "Lukas Steinbrecher"
+  info = "Coder for fun and profit."
+  description = "Lukas Steinbrecher's personal website"
+  keywords = "blog,developer,personal,software-engineering"
+  avatarurl = "images/lukas.jpg"
+  #gravatar = "john.doe@example.com"
+
+  #faviconSVG = "/images/favicon.svg"
+  favicon_32 = "/images/favicon-32x32.png"
+  favicon_16 = "/images/favicon-16x16.png"
+
+  since = 2019
+
+  enableTwemoji = true
+
+  colorScheme = "auto"
+  hidecolorschemetoggle = false
+
+  # customCSS = ["css/custom.css"]
+  customSCSS = ["scss/style.scss"]
+  # customJS = ["js/custom.js"]
+
+[taxonomies]
+  category = "categories"
+  series = "series"
+  tag = "tags"
+  author = "authors"
+
+# Social links
+[[params.social]]
+  name = "Github"
+  icon = "fa-brands fa-github fa-2x"
+  weight = 1
+  url = "https://github.com/lukstei/"
+[[params.social]]
+  name = "LinkedIn"
+  icon = "fa-brands fa-linkedin fa-2x"
+  weight = 2
+  url = "https://at.linkedin.com/in/lukstei"
+[[params.social]]
+  name = "Mail"
+  icon = "fa fa-envelope fa-2x"
+  weight = 3
+  url = "&#109;&#97;&#105;&#108;&#116;&#111;&#58;%6C%75%6B%61%73%40%6C%75%6B%73%74%65%69%2E%63%6F%6D"
+
+# Menu links
+[[menu.main]]
+  name = "Blog"
+  weight = 1
+  url  = "posts/"
+[[menu.main]]
+  name = "About"
+  weight = 2
+  url = "about/"
