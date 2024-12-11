@@ -9,8 +9,9 @@ enableGitInfo = true
 pagerSize = 6
 
 [markup.highlight]
-style = "github-dark"
+style = "github"
 noClasses = false
+
 anchorLineNos = false
 codeFences = true
 guessSyntax = false

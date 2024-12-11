@@ -1,3 +1,5 @@
+@import "syntax.scss";
+
 .page-about {
   .page {
     max-width: 60rem;
@@ -6,19 +8,55 @@
   .content article a:where(.external-link):not(:has(img)):after {
     font-size: 0.6em;
   }
+}
 
+code {
+  font-size: 1.4rem;
 }
 
 .highlight {
-  code {
-    padding: 0 0 0 0;
+  > div, > pre {
+    box-shadow: 7px 7px 0px -3px rgba(98, 98, 98, 0.5);
+    border-radius: 3px;
+    border: 1px solid black;
+  }
+
+  .lntable {
+    width: 100%;
+
+    .lntd {
+      > pre {
+        padding: 0;
+      }
+
+      code {
+        display: block;
+        padding: 0.3rem 0rem;
+      }
+
+      .hl .lnt {
+        font-weight: 600;
+      }
+      .lnt {
+        padding: 0 0.8em 0 1em;
+      }
+    }
+
   }
 
   .chroma {
+    .chroma {
+      margin: 1rem 0 1rem;
+    }
+
+    > code { // without line numbers
+      padding: 1rem;
+    }
+
+    padding: 0;
+
     .hl {
       display: block;
     }
-    margin: 1rem 0 1rem;
-    padding: 0;
   }
 }

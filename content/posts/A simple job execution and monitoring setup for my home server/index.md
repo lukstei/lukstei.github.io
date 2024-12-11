@@ -43,7 +43,8 @@ I opted for `systemd` over cron, because it also gives you logging for free, sin
 Here's how a job is run (inside a systemd unit):
 
 ```bash
-/usr/bin/env python3 /apps/services/job-wrapper/job-wrapper.py backup-photos /apps/services/job-backup/backup.sh ssh://my-storage-box:23/./vps-1-photos /media/data/photos
+/usr/bin/env python3 /apps/services/job-wrapper/job-wrapper.py backup-photos \
+  /apps/services/job-backup/backup.sh /media/data/photos
 ```
 
 The job is also given a name (the first parameter to the `job-wrapper.py`), which is used for writing the metric files and as metric labels.

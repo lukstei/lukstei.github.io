@@ -31,18 +31,18 @@ export default function Example() {
   const [error, setError] = useState()
   const [isLoading, setIsLoading] = useState(true)
 
-  const doCall = () => fetch("/api/users").then(r => r.text()) // highlight-line
+  const doCall = () => fetch("/api/users").then(r => r.text()) 
 
-  doCall().then(// highlight-line
-    r => {// highlight-line
-      setIsLoading(false) // highlight-line
-      setResult(r) // highlight-line
-    }, // highlight-line
-    e => {// highlight-line
-      setIsLoading(false)// highlight-line
-      setError(e) // highlight-line
-    } // highlight-line
-  ) // highlight-line
+  doCall().then(
+    r => {
+      setIsLoading(false) 
+      setResult(r) 
+    }, 
+    e => {
+      setIsLoading(false)
+      setError(e) 
+    } 
+  ) 
 
   return (
     <>
@@ -82,7 +82,7 @@ export default function Example() {
   const [error, setError] = useState()
   const [isLoading, setIsLoading] = useState(true)
 
-  useEffect(() => {// highlight-line
+  useEffect(() => {
     const doCall = () => fetch("/api/users").then(r => r.text())
 
     doCall().then(
@@ -138,7 +138,7 @@ export default function Example() {
         }
       )
     },
-    [] // highlight-line
+    [] 
   )
 
   return (
@@ -179,7 +179,7 @@ export default function ShowUser({ userId }) {
         }
       )
     },
-    [userId] // highlight-line
+    [userId] 
   )
 
   return (
@@ -235,9 +235,9 @@ export default function ShowUser({ userId }) {
       }
     )
 
-    return function cleanup() {// highlight-line
-      subscribed = false // highlight-line
-    } // highlight-line
+    return function cleanup() {
+      subscribed = false 
+    } 
   }, [userId])
 
   return (
@@ -310,10 +310,10 @@ Now to use our `usePromise` hook, we just need to pass our asynchronous function
 import React from "react"
 
 export default function ShowUser({ userId }) {
-  const [result, error, isLoading] = usePromise(// highlight-line
-    () => fetch(`/api/users/${userId}`).then(r => r.text()), // highlight-line
-    [userId] // highlight-line
-  ) // highlight-line
+  const [result, error, isLoading] = usePromise(
+    () => fetch(`/api/users/${userId}`).then(r => r.text()), 
+    [userId] 
+  ) 
 
   return (
     <>
@@ -340,10 +340,10 @@ export default function ShowUser({userId}) {
         [userId]
     )
 
-    const deleteUser = userId => {// highlight-line
-        console.log(`Deleting user ${userId}`)// highlight-line
-        ...// highlight-line
-    }// highlight-line
+    const deleteUser = userId => {
+        console.log(`Deleting user ${userId}`)
+        ...
+    }
 
     return (
         <>
@@ -374,19 +374,19 @@ export default function ShowUser({userId}) {
         [userId]
     )
 
-    const [counter, setCounter] = useState(0)// highlight-line
+    const [counter, setCounter] = useState(0)
 
     usePromise(() => {
-            if (counter > 0) {// highlight-line
+            if (counter > 0) {
                 return fetch(`/api/users/${userId}`, {method: "DELETE"})
             }
             return Promise.resolve()
         },
-        [counter]// highlight-line
+        [counter]
     )
 
     const deleteUser = () => {
-        setCounter(counter => counter + 1)// highlight-line
+        setCounter(counter => counter + 1)
     }
 
     return (
@@ -471,9 +471,9 @@ export default function ShowUser({ userId }) {
     [userId]
   )
 
-  const [, deleteError, isDeleting, triggerDelete] = usePromiseOnCallback(// highlight-line
-    () => fetch(`/api/users/${userId}`, { method: "DELETE" }) // highlight-line
-  ) // highlight-line
+  const [, deleteError, isDeleting, triggerDelete] = usePromiseOnCallback(
+    () => fetch(`/api/users/${userId}`, { method: "DELETE" }) 
+  ) 
 
   return (
     <>
