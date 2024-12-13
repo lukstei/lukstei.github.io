@@ -23,7 +23,9 @@ body.colorscheme-dark .chroma .hl {
 }
 
 .highlight {
-  > div, > pre {
+
+  >div,
+  >pre {
     box-shadow: 7px 7px 0px -3px rgba(98, 98, 98, 0.5);
     border-radius: 3px;
     border: 1px solid black;
@@ -33,7 +35,7 @@ body.colorscheme-dark .chroma .hl {
     width: 100%;
 
     .lntd {
-      > pre {
+      >pre {
         padding: 0;
       }
 
@@ -45,6 +47,7 @@ body.colorscheme-dark .chroma .hl {
       .hl .lnt {
         font-weight: 600;
       }
+
       .lnt {
         padding: 0 0.8em 0 1em;
       }
@@ -57,7 +60,8 @@ body.colorscheme-dark .chroma .hl {
       margin: 1rem 0 1rem;
     }
 
-    > code { // without line numbers
+    >code {
+      // without line numbers
       padding: 1rem;
     }
 

@@ -3,6 +3,10 @@
   <span id="cursor" class="blinking-cursor" style="visibility: hidden">_</span>
 </h2>
 <style>
+  .avatar img {
+    border: 1.5px solid black;
+  }
+
   .blinking-cursor {
     user-select: none;
     animation: blink 1s steps(2, start) infinite;
@@ -25,44 +29,51 @@
       { text: 'Coder. For fun and profit. 😊', sleep: 2000 }
     ]
 
+    const type = new TypeAsync(node);
+
     for (const phrase of phrases) {
       await sleep(phrase.sleep)
       cursorEl.style.visibility = "visible"
       await sleep(1500)
-      await node.delete(node.innerText)
+      await type.delete(node.innerText)
       await sleep(1000)
-      await node.type(phrase.text)
+      await type.type(phrase.text)
       cursorEl.style.visibility = "hidden"
     }
   }
   const sleep = time => new Promise(resolve => setTimeout(resolve, time))
+  class TypeAsync {
+    constructor(element) {
+      this.element = element;
+    }
 
-  class TypeAsync extends HTMLSpanElement {
     get typeInterval() {
-      const randomMs = Math.random() * 150 + 50
-      return randomMs
+      const randomMs = Math.random() * 150 + 50;
+      return randomMs;
     }
 
     deleteInterval(length) {
-      const randomMs = Math.random() * 70 + 20
-      return randomMs
+      const randomMs = Math.random() * 70 + 20;
+      return randomMs;
+    }
+
+    async sleep(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
     }
 
     async type(text) {
       for (let character of text) {
-        this.innerText += character
-        await sleep(this.typeInterval)
+        this.element.innerText += character;
+        await this.sleep(this.typeInterval);
       }
     }
 
     async delete(text) {
       for (let i = text.length - 1; i >= 0; i--) {
-        this.innerText = this.innerText.slice(0, i)
-        await sleep(this.deleteInterval(text.length))
+        this.element.innerText = this.element.innerText.slice(0, i);
+        await this.sleep(this.deleteInterval(text.length));
       }
     }
   }
-  customElements.define('type-async', TypeAsync, { extends: 'span' })
-
   init();
 </script>
