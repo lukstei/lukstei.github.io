@@ -20,8 +20,6 @@ header {
 }
 {{< /style >}}
 
-Welcome!
-
 I'm a passionate Software Engineer based in Vienna 🇦🇹. I work at [Senacor](https://senacor.com/en/), an IT consulting company, where I help clients build awesome software. My work involves developing backend systems (using Java, Kotlin, Python), building frontends (with React), often deployed on Kubernetes on AWS or Azure. I'm drawn to the challenge of creating efficient, robust and maintainable solutions.
 
 In my free time, besides more conventional leisure activities, like spending time with other humans, going for a drink and doing sports like Padel and Squash, I also enjoy exploring new technologies by tinkering with various projects, though they don't always get finished.
