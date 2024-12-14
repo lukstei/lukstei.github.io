@@ -11,22 +11,25 @@ enableInlineShortcodes = true
 [pagination]
 pagerSize = 6
 
-[markup.highlight]
-style = "github"
-noClasses = false
+[markup]
+  [markup.highlight]
+  style = "github"
+  noClasses = false
 
-anchorLineNos = false
-codeFences = true
-guessSyntax = false
-hl_Lines = ''
-hl_inline = false
-lineAnchors = ''
-lineNoStart = 1
-lineNos = false
-lineNumbersInTable = true
-noHl = false
+  anchorLineNos = false
+  codeFences = true
+  guessSyntax = false
+  hl_Lines = ''
+  hl_inline = false
+  lineAnchors = ''
+  lineNoStart = 1
+  lineNos = false
+  lineNumbersInTable = true
+  noHl = false
 
-tabWidth = 4
+  tabWidth = 4
+  [markup.goldmark.renderer]
+  unsafe = true
 [params]
   author = "Lukas Steinbrecher"
   info = "Coder for fun and profit."
@@ -78,4 +81,4 @@ tabWidth = 4
 [[menu.main]]
   name = "About"
   weight = 2
-  url = "about/"
+  url = "/about"
